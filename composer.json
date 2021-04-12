@@ -1,0 +1,54 @@
+{
+    "name": "lavrahq/identity",
+    "description": "The Core for the Lavra Identity project. This package brings the core functionality for Identity into our base template.",
+    "keywords": [
+        "lavrahq",
+        "identity"
+    ],
+    "homepage": "https://github.com/lavrahq/identity",
+    "license": "Mozilla Public License 2.0",
+    "type": "library",
+    "authors": [
+        {
+            "name": "Lavra",
+            "email": "oss@lavra.io",
+            "role": "Developer"
+        }
+    ],
+    "require": {
+        "php": "^7.1",
+        "illuminate/support": "^6.0"
+    },
+    "require-dev": {
+        "orchestra/testbench": "^4.0",
+        "phpunit/phpunit": "^8.0"
+    },
+    "autoload": {
+        "psr-4": {
+            "Lavrahq\\Identity\\": "src"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "Lavrahq\\Identity\\Tests\\": "tests"
+        }
+    },
+    "scripts": {
+        "test": "vendor/bin/phpunit",
+        "test-coverage": "vendor/bin/phpunit --coverage-html coverage"
+
+    },
+    "config": {
+        "sort-packages": true
+    },
+    "extra": {
+        "laravel": {
+            "providers": [
+                "Lavrahq\\Identity\\IdentityServiceProvider"
+            ],
+            "aliases": {
+                "Identity": "Lavrahq\\Identity\\IdentityFacade"
+            }
+        }
+    }
+}
